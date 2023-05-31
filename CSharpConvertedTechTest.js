@@ -72,12 +72,15 @@ const argvArr = outArray("ArgvInts", process.argv[2].slice(1,process.argv[2].len
     outArray("Combined", combined);
 */
 
-const combinedArr = outArray("Combined", [
-    ...initialArr,
-    ...sortedArr,
-    ...oddArr,
-    ...argvArr
-])
+const combinedArr = outArray("Combined", 
+        [...new Set([
+                ...initialArr,
+                ...sortedArr,
+                ...oddArr,
+                ...argvArr
+            ])
+        ]
+    )
 
 
 
